@@ -1,0 +1,100 @@
+.footer {
+  background: #080808;
+  position: relative;
+}
+.topBar {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.4), transparent);
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem clamp(1.25rem, 5vw, 3rem) 3rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.4fr;
+  gap: 3rem;
+}
+
+.brand { display: flex; flex-direction: column; gap: 1rem; }
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  background: linear-gradient(135deg, #C9A84C, #F0DFA0, #C9A84C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.logoDot {
+  font-size: 0.5rem;
+  animation: spin 6s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.brandDesc {
+  font-size: 0.83rem;
+  color: #555550;
+  line-height: 1.85;
+}
+.socials { display: flex; gap: 1rem; }
+.social {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #444440;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+.social:hover { color: #C9A84C; }
+
+.col { display: flex; flex-direction: column; gap: 1rem; }
+.colTitle {
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  font-weight: 500;
+}
+.colList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.colLink {
+  font-size: 0.83rem;
+  color: #555550;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  letter-spacing: 0.03em;
+}
+.colLink:hover { color: #C9A84C; }
+.colText {
+  font-size: 0.83rem;
+  color: #555550;
+  line-height: 1.65;
+}
+
+.bottom {
+  border-top: 1px solid rgba(201,168,76,0.07);
+  padding: 1.5rem clamp(1.25rem, 5vw, 3rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.bottomText {
+  font-size: 0.72rem;
+  color: #333330;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 1024px) {
+  .container { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .container { grid-template-columns: 1fr; }
+  .bottom { flex-direction: column; text-align: center; }
+}
