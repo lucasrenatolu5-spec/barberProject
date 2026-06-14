@@ -18,6 +18,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (menuOpen) return; // não esconde a nav enquanto menu estiver aberto
       const y = window.scrollY;
       setScrolled(y > 60);
       setVisible(y < lastScroll.current || y < 100);
@@ -34,7 +35,7 @@ const Navbar: React.FC = () => {
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [menuOpen]);
 
   const handleNav = (href: string) => {
     setMenuOpen(false);
@@ -43,7 +44,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''} ${!visible ? styles.hidden : ''}`}>
+    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''} ${!visible && !menuOpen ? styles.hidden : ''}`}>
       <div className={styles.container}>
         <button className={styles.logo} onClick={() => handleNav('#hero')}>
           <span className={styles.logoText}>AURUM</span>
