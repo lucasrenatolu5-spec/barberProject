@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
           <span className={styles.logoDot}>◆</span>
         </button>
 
-        <ul className={`${styles.links} ${menuOpen ? styles.open : ''}`}>
+        <ul className={`${styles.links} ${menuOpen ? styles.linksOpen : ''}`}>
           {navLinks.map(link => (
             <li key={link.href}>
               <button

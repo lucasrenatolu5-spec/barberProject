@@ -159,7 +159,7 @@
     transform: translateY(-10px);
     transition: opacity 0.35s ease, transform 0.35s ease;
   }
-  .links.open {
+  .linksOpen {
     opacity: 1;
     pointer-events: all;
     transform: translateY(0);
