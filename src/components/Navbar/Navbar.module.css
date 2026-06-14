@@ -148,25 +148,28 @@
 
   .links {
     position: fixed;
-    inset: 0;
-    background: rgba(10,10,10,0.97);
-    backdrop-filter: blur(20px);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    background: #0A0A0A;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 1.5rem;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-10px);
-    transition: opacity 0.35s ease, transform 0.35s ease;
+    transition: opacity 0.35s ease;
   }
   .linksOpen {
     opacity: 1;
     pointer-events: all;
-    transform: translateY(0);
   }
   .link {
     font-size: 1.1rem;
     padding: 0.75rem 1.5rem;
+    color: #C9A84C;
   }
   .ctaBtn {
     margin-left: 0;
