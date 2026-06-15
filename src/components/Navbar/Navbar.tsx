@@ -50,8 +50,14 @@ const Navbar: React.FC = () => {
           <span className={styles.logoText}>AURUM</span>
           <span className={styles.logoDot}>◆</span>
         </button>
-
-        <ul className={`${styles.links} ${menuOpen ? styles.linksOpen : ''}`}>
+            <ul
+              className={styles.links}
+              style={
+              window.innerWidth <= 768
+              ? { opacity: menuOpen ? 1 : 0, pointerEvents: menuOpen ? 'all' : 'none' }
+              : {}
+          }
+          >
           {navLinks.map(link => (
             <li key={link.href}>
               <button
