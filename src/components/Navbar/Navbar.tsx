@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
     width: '100%',
     height: '100%',
     background: '#0A0A0A',
-    zIndex: 101,
+    zIndex: 102,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -81,7 +81,7 @@ const Navbar: React.FC = () => {
       style={{
         position: 'fixed',
         top: 0, left: 0, right: 0,
-        zIndex: 100,
+        zIndex: menuOpen ? 102 : 100,
         padding: scrolled ? '0.9rem 0' : '1.5rem 0',
         background: scrolled ? 'rgba(10,10,10,0.95)' : 'transparent',
         backdropFilter: scrolled ? 'blur(16px)' : 'none',
